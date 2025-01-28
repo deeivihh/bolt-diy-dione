@@ -1,0 +1,47 @@
+{
+    "dependencies": {
+        "git": {
+            "version": "latest"
+        },
+        "node": {
+            "version": "latest"
+        }
+    },
+    "installation": [
+        {
+            "name": "Cloning repository",
+            "type": "git",
+            "commands": [
+                "git clone -b stable https://github.com/stackblitz-labs/bolt.diy bolt"
+            ]
+        },
+        {
+            "name": "Installing dependencies",
+            "type": "shell",
+            "commands": [
+                "cd bolt",
+                "npm install"
+            ]
+        }
+    ],
+    "start": [
+        {
+            "name": "Starting bolt",
+            "type": "shell",
+            "catch": "5123",
+            "commands": [
+                "cd bolt",
+                "npm run dev"
+            ]
+        }
+    ],
+    "uninstall": [
+        {
+            "name": "Uninstalling bolt",
+            "type": "shell",
+            "commands": [
+                "rm -rf bolt"
+            ]
+        }
+    ]
+}
