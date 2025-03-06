@@ -1,47 +1,26 @@
 {
-    "dependencies": {
-        "git": {
-            "version": "latest"
-        },
-        "node": {
-            "version": "latest"
-        }
+  "config": {
+    "defaultWorkingDirectory": "./",
+    "stopOnError": true
+  },
+  "actions": [
+    {
+      "id": 1,
+      "name": "Cloning repository",
+      "command": "git clone https://github.com/stackblitz-labs/bolt.diy bolt",
+      "description": "Clone the bolt repository from GitHub"
     },
-    "installation": [
-        {
-            "name": "Cloning repository",
-            "type": "GIT",
-            "commands": [
-                "git clone https://github.com/stackblitz-labs/bolt.diy bolt"
-            ]
-        },
-        {
-            "name": "Installing dependencies",
-            "type": "SHELL",
-            "commands": [
-                "cd bolt",
-                "npm install"
-            ]
-        }
-    ],
-    "start": [
-        {
-            "name": "Starting bolt",
-            "type": "SHELL",
-            "catch": "5123",
-            "commands": [
-                "cd bolt",
-                "npm run dev"
-            ]
-        }
-    ],
-    "uninstall": [
-        {
-            "name": "Uninstalling bolt",
-            "type": "SHELL",
-            "commands": [
-                "rm -rf bolt"
-            ]
-        }
-    ]
+    {
+      "id": 2,
+      "name": "Installing dependencies",
+      "command": "cd bolt && npm install",
+      "description": "Navigate to bolt directory and install Node.js dependencies"
+    },
+    {
+      "id": 3,
+      "name": "Starting bolt",
+      "command": "cd bolt && npm run dev",
+      "description": "Run the development server for bolt project (port 5123)"
+    }
+  ]
 }
