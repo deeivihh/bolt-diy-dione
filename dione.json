@@ -10,14 +10,12 @@
     "installation": [
         {
             "name": "Cloning repository",
-            "type": "GIT",
             "commands": [
                 { "command": "git clone https://github.com/stackblitz-labs/bolt.diy bolt" }
             ]
         },
         {
             "name": "Installing dependencies",
-            "type": "SHELL",
             "commands": [
                 { "command": "cd bolt" },
                 { "command": "npm install" }
@@ -27,7 +25,6 @@
     "start": [
         {
             "name": "Starting bolt",
-            "type": "SHELL",
             "catch": "5123",
             "commands": [
                 { "command": "cd bolt" },
